@@ -26,7 +26,12 @@ const updatePage = async () => {
 
   // Make API request and get an array of fruit objects
   const fruitsArray = await apiRequest();
-  // console.log(fruitsArray);
+  console.log(fruitsArray);
+  const filtered = fruitsArray.filter(fruit => 
+    fruit.nutritions.sugar > 10
+  )
+  console.log(filtered);
+
 
   // TODO: Use either `map` and/or `filter` to extract some data from the array of fruit objects
   // For example, find "name of all fruits whose sugar > 15",
@@ -47,6 +52,22 @@ const exampleAddElement = () => {
   const existingElement = document.getElementById('example-id');
   existingElement.append(newElement);
 }
+// const changeBackgroundColor = (color) => {
+//   console.dir(color)
+//   document.body.style.backgroundColor = color.value
+// }
+// const list = ['serdar', 'mason', 'max', 'zeynep']
+// const filtered = list.filter( name => {
+//   return name.includes("m")
+// })
+
+// const mapped = list.map((name) => {
+//   return {
+//     'index' : i,
+//     'name' : name
+//   }
+// })
+// console.log(filtered)
 
 /**
  * To access information in this API, we need to send our requests through a proxy due to CORS restrictions.
